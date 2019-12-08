@@ -14,16 +14,16 @@ const authenticate = (req, res, next) => {
   header = header.split(' ')
   console.log(header)
 
-  let token = header[1]
+  // let token = header[1]
 
   console.log(token)
 
   jwt.verify(token, 'secret', function(err, decoded){
     if(err){
-      console.log('Invalid Token')
+      console.log('Bad Token')
     }else{
       req.user = decoded
-      console.log('success')
+      console.log('Triumph')
     }
     console.log(decoded)
   })
